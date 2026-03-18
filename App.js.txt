@@ -1,0 +1,22 @@
+const products = [
+  { name: "Drone X Pro", price: 49999, img: "https://via.placeholder.com/200" },
+  { name: "Mini Drone", price: 12999, img: "https://via.placeholder.com/200" },
+  { name: "Smart Watch", price: 4999, img: "https://via.placeholder.com/200" }
+];
+
+const container = document.getElementById("products");
+
+products.forEach(p => {
+  container.innerHTML += `
+    <div class="bg-gray-900 p-4 rounded">
+      <img src="${p.img}" class="mb-2">
+      <h2>${p.name}</h2>
+      <p>₹${p.price}</p>
+      <button onclick="payNow(${p.price})" class="bg-blue-500 px-3 py-1 mt-2">Buy</button>
+    </div>
+  `;
+});
+
+function payNow(amount) {
+  alert("Payment will be added next step");
+}
